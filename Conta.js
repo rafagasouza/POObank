@@ -16,8 +16,11 @@ class Conta{
     }
 
     transferir(rementente, valor){
-        rementente.setSaldo(valor)
-        this.#saldo -= valor
+      if(rementente.numero === this.#numero){
+        this.setSaldo(valor)
+      }else{
+        this.setSaldo(-valor)
+      }
     }
 
     saque(valor){

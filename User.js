@@ -1,5 +1,5 @@
-class Actions{
-    constructor(valor, data){
+class User{
+    constructor(fullname, email, conta){
         this.valor = valor
         this.data = data
     }
