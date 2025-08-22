@@ -1,9 +1,9 @@
 class Parcela{
     #taxa
-    constructor(num, valor, status){
+    constructor(num, valor, status = false){
         this.num = num
         this.valor = valor
-        this.status = false
+        this.status = status
     }
 }
 

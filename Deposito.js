@@ -1,6 +1,6 @@
 class Deposito extends Actions{
-    constructor(valor, data){
-        super(valor, data)
+    constructor(valor){
+        super(valor)
     }
 }
 

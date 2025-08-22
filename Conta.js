@@ -1,26 +1,31 @@
 class Conta{
     #saldo
     #numero
-    constructor(titular, saldo = 0, type = null){
-        this.#saldo = saldo
+    constructor(titular){
+        this.#saldo = 0
         this.titular = titular
         this.#numero = Math.random()*2
-        this.type = type
         this.depositosRealizados = []
         this.transferenciasRealizadas = []
         this.emprestimosRealizados = []
     }
 
-    setSaldo(valor){
+    set Saldo(valor){
         this.#saldo += valor
     }
+    get Saldo(){
+        return this.#saldo
+    }
 
-    transferir(rementente, valor){
-      if(rementente.numero === this.#numero){
+    transferir(transfer){
+      if(transfer.remetente.email === transfer.destinatario.email){
         this.setSaldo(valor)
+         this.transferenciasRealizadas.push(transfer)
       }else{
         this.setSaldo(-valor)
+         this.transferenciasRealizadas.push(transfer)
       }
+     
     }
 
     saque(valor){
@@ -34,8 +39,14 @@ class Conta{
       }
     }
    
-    deposito(rementente, valor){
-        rementente.setSaldo(valor)
+    deposito(deposito){
+        this.Saldo(deposito.valor)
+        this.depositosRealizados.push(deposito)
+    }
+
+    emprestimo(emprestimo){
+        this.Saldo(emprestimo.valor)
+        this.emprestimosRealizados.push(emprestimo)
     }
 
     dados(){

@@ -1,8 +1,6 @@
 class App{
-    constructor(valor, data){
-        this.valor = valor
-        this.data = data
-    }
+   static #users = []
+   
 }
 
 export default App
